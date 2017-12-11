@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Buku Tamu</title>
+</head>
+<body>
+    <h1>Edit Data</h1>
+    <% if(error){ %>
+        <label>Data tidak boleh kosong!!!</label>
+    <% } %>
+    <form action="/edit" method="post">
+        <input type="hidden" name="id" value="<%= data[0].id %>">
+        <label for="nama">Nama </label>
+        <input id="nama" type="text" name="nama" value="<%= data[0].nama %>" /><br />
+        <label for="teks">Keterangan</label>
+        <textarea name="teks" id="teks" cols="16" rows="4"><%= data[0].teks %></textarea><br />
+        <input type="submit" value="Simpan">
+    </form>
+</body>
+</html>

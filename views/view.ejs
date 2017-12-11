@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Buku Tamu</title>
+</head>
+<body>
+    <h1>View</h1>
+
+    <a href="/create">Tambah Data</a>
+    <table border="1">
+        <tr>
+            <th>Nama</th>
+            <th>Keterangan</th>
+            <th>Aksi</th>
+        </tr>
+        <% data.forEach(function(dat){ %>
+        <tr>
+            <td><%= dat.nama %></td>
+            <td><%= dat.teks %></td>
+            <td><a href="/delete/<%= dat.id %>">Delete</a>
+            <a href="/edit/<%= dat.id %>">Edit</a></td>
+        </tr>
+        <% }); %>
+    </table>
+
+</body>
+</html>
